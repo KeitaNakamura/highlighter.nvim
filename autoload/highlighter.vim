@@ -202,12 +202,11 @@ if !exists('g:highlighter#syntax_python')
         \   'hlgroup_link'  : 'Function',
         \   'tagkinds'      : 'm',
         \   'syntax_type'   : 'match',
-        \   'syntax_suffix' : '(\@=',
+        \   'syntax_prefix' : '\.\@<=',
         \ },
         \ { 'hlgroup'       : 'HighlighterPythonClass',
         \   'hlgroup_link'  : 'Type',
         \   'tagkinds'      : 'c',
-        \   'syntax_type'   : 'keyword',
         \ }]
 endif
 " }}}
