@@ -26,9 +26,15 @@ You can update the syntax highlight by using `:HighlighterUpdate` command.
 
 ## Options
 
+### Languages that you want to highlight
+example:
+```vim
+let g:highlighter#languages = ['python', 'c', 'cpp'] " set `filetype`s
+```
+
 ### Automatic syntax highlight
 ```vim
-let g:highlighter#auto_update = 0 # 0: disable (default), 1: after saving the file, 2: after saving and opening the file
+let g:highlighter#auto_update = 0 " 0: disable (default), 1: after saving the file, 2: after saving and opening the file
 ```
 
 ### Project root directory sign
@@ -40,7 +46,7 @@ let g:highlighter#project_root_signs = ['.git']
 
 ### Customization
 example:
-```
+```vim
 let g:highlighter#syntax_python = [
       \ { 'hlgroup'       : 'HighlighterPythonFunction',
       \   'hlgroup_link'  : 'Function',
