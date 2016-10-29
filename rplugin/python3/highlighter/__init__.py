@@ -19,6 +19,7 @@ class Highlighter:
     def init_members(self):
         self.vim.call('g:highlighter#initialize')
         self.is_started = True
+        self.languages = self.vim.eval('g:highlighter#languages')
         self.project_root_signs = self.vim.eval('g:highlighter#project_root_signs')
         self.ctags_options = self.vim.eval('g:highlighter#ctags_options')
         self.syntax = self.vim.eval('g:highlighter#syntax')
@@ -28,7 +29,7 @@ class Highlighter:
         self.is_started or self.init_members()
 
         ftype = self.vim.eval('&filetype')
-        if ftype == '' or not ftype in self.syntax:
+        if not ftype in self.languages or not ftype in self.syntax:
             return
 
         # make ctags options

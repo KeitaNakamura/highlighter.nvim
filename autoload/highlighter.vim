@@ -13,6 +13,9 @@ set cpo&vim
 " Global variables {{{1
 let g:highlighter#default_syntax_prefix = '\C\<'
 let g:highlighter#default_syntax_suffix = '\>'
+if !exists('g:highlighter#languages')
+  let g:highlighter#languages = []
+endif
 if !exists('g:highlighter#syntax')
   let g:highlighter#syntax = {}
 endif
