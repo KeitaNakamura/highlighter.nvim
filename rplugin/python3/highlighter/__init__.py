@@ -19,7 +19,7 @@ class Highlighter:
     def init_members(self):
         self.vim.call('g:highlighter#initialize')
         self.is_started = True
-        self.ctags_root_signs = self.vim.eval('g:highlighter#ctags_root_signs')
+        self.project_root_signs = self.vim.eval('g:highlighter#project_root_signs')
         self.ctags_options = self.vim.eval('g:highlighter#ctags_options')
         self.syntax = self.vim.eval('g:highlighter#syntax')
 
@@ -53,9 +53,9 @@ class Highlighter:
 
     def find_project_root(self):
         fname = self.vim.current.buffer.name
-        if len(self.ctags_root_signs) != 0:
+        if len(self.project_root_signs) != 0:
             proot = os.path.dirname(fname)
-            for sign in self.ctags_root_signs:
+            for sign in self.project_root_signs:
                 candidate = proot
                 while candidate != '/':
                     if os.path.exists(candidate+'/'+sign):

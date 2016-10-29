@@ -16,8 +16,8 @@ let g:highlighter#default_syntax_suffix = '\>'
 if !exists('g:highlighter#syntax')
   let g:highlighter#syntax = {}
 endif
-if !exists('g:highlighter#ctags_root_signs')
-  let g:highlighter#ctags_root_signs = []
+if !exists('g:highlighter#project_root_signs')
+  let g:highlighter#project_root_signs = []
 endif
 if !exists('g:highlighter#ctags_options')
   let g:highlighter#ctags_options = []
