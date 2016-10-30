@@ -26,10 +26,10 @@ You can update the syntax highlight by using `:HighlighterUpdate` command.
 
 ## Options
 
-### Languages that you want to highlight
+### Languages that you want to disable syntax highlight
 example:
 ```vim
-let g:highlighter#languages = ['python', 'c', 'cpp'] " set `filetype`s
+let g:highlighter#disabled_languages = ['c', 'cpp'] " set `filetype`s
 ```
 
 ### Automatic syntax highlight
