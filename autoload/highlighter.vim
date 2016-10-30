@@ -148,6 +148,8 @@ if !exists('g:highlighter#syntax_c')
         \ { 'hlgroup'       : 'HighlighterCFunction',
         \   'hlgroup_link'  : 'Function',
         \   'tagkinds'      : 'fp',
+        \   'syntax_type'   : 'match',
+        \   'syntax_suffix' : '(\@=',
         \ }]
 endif
 " }}}
@@ -174,6 +176,7 @@ if !exists('g:highlighter#syntax_cpp')
         \   'hlgroup_link'  : 'Function',
         \   'tagkinds'      : 'fp',
         \   'syntax_type'   : 'match',
+        \   'syntax_suffix' : '(\@=',
         \ }]
 endif
 " }}}
