@@ -13,8 +13,8 @@ set cpo&vim
 " Global variables {{{1
 let g:highlighter#default_syntax_prefix = '\C\<'
 let g:highlighter#default_syntax_suffix = '\>'
-if !exists('g:highlighter#languages')
-  let g:highlighter#languages = []
+if !exists('g:highlighter#disabled_languages')
+  let g:highlighter#disabled_languages = []
 endif
 if !exists('g:highlighter#syntax')
   let g:highlighter#syntax = {}
@@ -89,7 +89,7 @@ function! s:init_syntax(objects) " {{{2
 endfunction
 " }}}
 function! s:syntax_groups_to_ignore() " {{{2
-  " This function is copied from https://github.com/xolox/vim-easytags/blob/72a8753b5d0a951e547c51b13633f680a95b5483/autoload/xolox/easytags.vim
+  " NOTE: This function is copied from https://github.com/xolox/vim-easytags/blob/72a8753b5d0a951e547c51b13633f680a95b5483/autoload/xolox/easytags.vim
   "
   " Get a string matching the syntax groups where dynamic highlighting should
   " *not* apply. This is complicated by the fact that Vim has a tendency to do

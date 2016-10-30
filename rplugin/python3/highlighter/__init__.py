@@ -19,7 +19,7 @@ class Highlighter:
     def init_members(self):
         self.vim.call('g:highlighter#initialize')
         self.is_started = True
-        self.languages = self.vim.eval('g:highlighter#languages')
+        self.disabled_languages = self.vim.eval('g:highlighter#disabled_languages')
         self.project_root_signs = self.vim.eval('g:highlighter#project_root_signs')
         self.ctags_options = self.vim.eval('g:highlighter#ctags_options')
         self.syntax = self.vim.eval('g:highlighter#syntax')
@@ -29,13 +29,17 @@ class Highlighter:
         self.is_started or self.init_members()
 
         ftype = self.vim.eval('&filetype')
-        if not ftype in self.languages or not ftype in self.syntax:
+        if ftype in self.disabled_languages or not ftype in self.syntax:
             return
 
         # make ctags options
         proot = self.find_project_root()
-        lang = 'c++' if ftype == 'cpp' else ftype
-        lang = 'c#'  if ftype == 'cs'  else ftype
+        if ftype == 'cpp':
+            lang = 'c++'
+        elif ftype == 'cs':
+            lang = 'c#'
+        else:
+            lang = ftype
         ctags_options = self.ctags_options + ['--languages='+lang, proot]
         os.path.isdir(proot) and ctags_options.insert(0, '-R')
 
@@ -92,7 +96,6 @@ class Highlighter:
         r = re.compile(r'[.*^$/\\~\[\]]')
         escape = lambda x: r.sub(r'\\\g<0>', x)
         for s in syntax:
-            commands.append("syntax clear " + s['hlgroup'])
             for key in s['tagkinds']:
                 if key in tags:
                     if s['syntax_type'] == 'keyword':
