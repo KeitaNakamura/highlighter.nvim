@@ -1,12 +1,14 @@
 # highlighter.nvim
 
-Highlighter is an asynchronous syntax highlight engine (using ctags) for Neovim. Following documentation is not finished yet (sorry).
+Highlighter is an asynchronous syntax highlight engine (using ctags) for Neovim.
 
 ## Features
 
 * The highlighter plug-in is based on [Exuberant Ctags](http://ctags.sourceforge.net) that generates an index (or tag) file of language objects found in source files. This means that the highlighter is available for all of languages supported by ctags.
 
 * Tag data and syntax commands (for vim) are generated asynchronously by using [python-client](https://github.com/neovim/python-client).
+
+<img src="https://github.com/KeitaNakamura/highlighter.nvim/blob/master/demo.gif" width="700">
 
 ## Reguirements
 
