@@ -23,14 +23,8 @@ if !exists('g:highlighter#project_root_signs')
   let g:highlighter#project_root_signs = []
 endif
 if !exists('g:highlighter#ctags_options')
-  let g:highlighter#ctags_options = []
-endif
-if !exists('g:highlighter#use_bulitin_ctags_options_file')
-  let g:highlighter#use_bulitin_ctags_options_file = 0
-endif
-if g:highlighter#use_bulitin_ctags_options_file == 1
   let path = expand('<sfile>:p:h')
-  call add(g:highlighter#ctags_options, '--options='.path.'/ctags_options_file')
+  let g:highlighter#ctags_options = ['--options='.path.'/ctags_options_file']
 endif
 " }}}
 " Functions for highlighting syntax {{{1
