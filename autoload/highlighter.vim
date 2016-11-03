@@ -28,7 +28,7 @@ if !exists('g:highlighter#ctags_options')
 endif
 " }}}
 " Functions for highlighting syntax {{{1
-function! g:highlighter#update_highlight(object) " {{{2
+function! highlighter#update_highlight(object) " {{{2
   let commands = a:object[0]
   let root = a:object[1]
   let filetype = a:object[2]
@@ -53,7 +53,7 @@ endfunction
 " }}}
 " }}}
 " Functions for defining syntax {{{1
-function! g:highlighter#initialize() abort " {{{2
+function! highlighter#initialize() abort " {{{2
   let userdefs = filter(copy(g:), 'v:key =~ "^highlighter#syntax_"')
   for [key, val] in items(userdefs)
     let type = substitute(key, '^highlighter#syntax_', '', '')
