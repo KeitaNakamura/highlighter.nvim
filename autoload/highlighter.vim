@@ -63,7 +63,7 @@ endfunction
 " }}}
 function! s:init_syntax(objects) " {{{2
   for obj in a:objects
-    if has_key(obj, 'hlgroup_link')
+    if has_key(obj, 'hlgroup_link') && !hlexists(obj['hlgroup'])
       exec "hi def link " . join([obj['hlgroup'], obj['hlgroup_link']])
     endif
     if !has_key(obj, 'syntax_prefix')
