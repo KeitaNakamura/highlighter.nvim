@@ -74,7 +74,7 @@ let g:highlighter#syntax_python = [
 * `syntax_prefix`: This is used only for `match` syntax type.
 * `syntax_suffix`: This is used only for `match` syntax type.
 
-Referencing [xolox/vim-easytags](https://github.com/xolox/vim-easytags), I added above customizations for following languages.
+I added above customizations for following languages, referring to [xolox/vim-easytags](https://github.com/xolox/vim-easytags).
 * Lua
 * C
 * C++
