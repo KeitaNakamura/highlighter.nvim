@@ -1,6 +1,6 @@
 --langdef=julia
 --langmap=julia:.jl
---regex-julia=/^[ \t]*(@inline[ \t]+|@noinline[ \t]+)?(function)[ \t]+([^ \t({[]+).*$/\3/f,function/
+--regex-julia=/^[ \t]*(@inline[ \t]+|@generated[ \t]+|@pure[ \t]+)?(function)[ \t]+([^ \t({[]+).*$/\3/f,function/
 --regex-julia=/^[ \t]*(macro)[ \t]+([^ \t({[]+).*$/\2/m,macro/
---regex-julia=/^[ \t]*(abstract|type|typealias|immutable)[ \t]+([^ \t({[]+).*$/\2/t,type/
---regex-julia=/^[ \t]*(@inline[ \t]+|@noinline[ \t]+)?(([^@#$ \t({[]+)|\(([^@#$ \t({[]+)\)|\((\$)\))[ \t]*(\{.*\})?[ \t]*\([^#]*\)[ \t]*=([^=].*$|$)/\3\4\5/f,function/
+--regex-julia=/^[ \t]*(abstract|type|typealias|immutable|struct)[ \t]+([^ \t({[]+).*$/\2/t,type/
+--regex-julia=/^[ \t]*(@inline[ \t]+|@generated[ \t]+|@pure[ \t]+)?(([^@#$ \t({[]+)|\(([^@#$ \t({[]+)\)|\((\$)\))[ \t]*(\{.*\})?[ \t]*\([^#]*\)[ \t]*=([^=].*$|$)/\3\4\5/f,function/
